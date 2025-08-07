@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Zk-ShieldNet</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-dark': '#0a192f',
+                        'cyber-light': '#ccd6f6',
+                        'cyber-gray': '#8892b0',
+                        'cyber-cyan': '#64ffda',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #0a192f;
+            color: #8892b0;
+            font-family: 'Inter', sans-serif;
+        }
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .section {
+            position: relative;
+            z-index: 1;
+        }
+        .privacy-content h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            color: #64ffda; /* cyber-cyan */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .privacy-content h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600;
+            color: #ccd6f6; /* cyber-light */
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-content p {
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .privacy-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+        .privacy-content a {
+            color: #64ffda;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .privacy-content a:hover {
+            color: #ccd6f6;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="network-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-cyber-dark bg-opacity-90 backdrop-blur-md z-50 px-6 py-4 border-b border-cyber-cyan border-opacity-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <svg class="w-8 h-8 text-cyber-cyan" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="ml-3 text-xl font-bold text-cyber-light">Zk-<span class="text-cyber-cyan">ShieldNet</span></span>
+            </a>
+             <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Home</a>
+                <a href="about.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">About</a>
+                <a href="contact.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Contact</a>
+                <a href="support.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Support</a>
+                <a href="careers.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Careers</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-cyber-light">Privacy Policy</h1>
+                <p class="text-lg text-cyber-gray mt-4">Last Updated: July 17, 2025</p>
+            </div>
+
+            <div class="privacy-content mt-12 bg-cyber-dark bg-opacity-50 p-8 rounded-lg border border-cyber-cyan border-opacity-20" data-aos="fade-up" data-aos-delay="100">
+                <p>Welcome to Zk-ShieldNet. Your privacy is not just a policy for us; it is the fundamental principle upon which our technology is built. This Privacy Policy explains how we handle information, but more importantly, how our service is designed from the ground up to protect your sensitive data.</p>
+
+                <h2>The Zk-ShieldNet Service: Privacy-by-Design</h2>
+                <p>The core Zk-ShieldNet Collective Defense Network (the "Service") is architected to ensure we, Zk-ShieldNet Inc., never see, process, or store our customers' sensitive operational data. Our on-premise ZK-Encoder converts raw security telemetry into cryptographic zero-knowledge proofs. Only these anonymous, non-reversible proofs are transmitted to the network.</p>
+                <p>To be perfectly clear: **Your raw logs, proprietary code, user data, and other confidential information never leave your security perimeter.** This is not a promise; it is a cryptographic guarantee.</p>
+
+                <h2>Information We Collect (Website Visitors)</h2>
+                <p>This policy primarily concerns our public-facing website (zkshield.net) and our direct business interactions. When you visit our website or interact with us for sales, support, or career opportunities, we may collect the following information:</p>
+                <ul>
+                    <li><strong>Contact Information:</strong> When you request a demo, contact us, or apply for a job, we collect information you provide, such as your name, work email, company name, and job title.</li>
+                    <li><strong>Technical Information:</strong> Like most websites, we collect standard technical information such as your IP address, browser type, and operating system for analytics and security purposes.</li>
+                    <li><strong>Usage Information:</strong> We may collect information about how you interact with our website, such as pages visited and time spent, to help us improve our content and user experience.</li>
+                </ul>
+
+                <h2>How We Use Your Information</h2>
+                <p>The information collected from our website visitors is used for the following legitimate business purposes:</p>
+                <ul>
+                    <li>To respond to your inquiries and demo requests.</li>
+                    <li>To provide you with customer support.</li>
+                    <li>To process job applications.</li>
+                    <li>To improve our website and marketing efforts.</li>
+                    <li>To maintain the security and integrity of our website.</li>
+                </ul>
+                <p>We will never sell your personal information to third parties.</p>
+
+                <h2>Data Security</h2>
+                <p>We implement industry-standard technical and organizational measures to protect the personal information we handle. This includes encryption, access controls, and secure development practices. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee its absolute security.</p>
+
+                <h2>Your Data Rights</h2>
+                <p>Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete your data. To exercise these rights, please contact us at the email address below.</p>
+
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the "Last Updated" date at the top.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or our privacy-by-design approach, please do not hesitate to contact us at <a href="mailto:privacy@zkshield.net">privacy@zkshield.net</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Animation on Scroll
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize the 3D background
+            initNetworkBackground();
+        });
+
+        // 3D background animation function
+        function initNetworkBackground() {
+            const canvas = document.getElementById('network-bg');
+            if (!canvas) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 1;
+            camera.rotation.x = Math.PI / 2;
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            const starGeo = new THREE.BufferGeometry();
+            const starCount = 6000;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i++) {
+                starPositions[i] = (Math.random() - 0.5) * 600;
+            }
+            starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            let starMaterial = new THREE.PointsMaterial({ color: 0x64ffda, size: 0.7, transparent: true });
+            const stars = new THREE.Points(starGeo, starMaterial);
+            scene.add(stars);
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+            window.addEventListener('resize', onWindowResize);
+            function animate() {
+                stars.position.y += 0.2;
+                if (stars.position.y > 200) stars.position.y = -200;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>

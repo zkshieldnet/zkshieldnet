@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Demo - Zk-ShieldNet</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-dark': '#0a192f',
+                        'cyber-light': '#ccd6f6',
+                        'cyber-gray': '#8892b0',
+                        'cyber-cyan': '#64ffda',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #0a192f;
+            color: #8892b0;
+            font-family: 'Inter', sans-serif;
+        }
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .section {
+            position: relative;
+            z-index: 1;
+        }
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            color: #ccd6f6;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #64ffda;
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+        }
+        .form-input.invalid {
+            border-color: #f87171; /* Red border for invalid fields */
+        }
+        /* Fix for dropdown option visibility */
+        .form-input option {
+            background-color: #0a192f; /* Dark background for options */
+            color: #ccd6f6; /* Light text for options */
+        }
+        .error-message {
+            color: #f87171;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            height: 1rem; /* Reserve space to prevent layout shifts */
+        }
+        .btn-primary {
+            background-color: #64ffda;
+            color: #0a192f;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: rgba(100, 255, 218, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="network-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-cyber-dark bg-opacity-90 backdrop-blur-md z-50 px-6 py-4 border-b border-cyber-cyan border-opacity-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <svg class="w-8 h-8 text-cyber-cyan" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="ml-3 text-xl font-bold text-cyber-light">Zk-<span class="text-cyber-cyan">ShieldNet</span></span>
+            </a>
+             <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Home</a>
+                <a href="support.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Support</a>
+                <a href="careers.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Careers</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-cyber-light">Request a Private Demo</h1>
+                <p class="text-lg text-cyber-gray mt-4">See how Zk-ShieldNet can transform your security posture. Fill out the form below and a member of our team will be in touch to schedule a personalized demo.</p>
+            </div>
+
+            <div id="form-container" class="mt-12" data-aos="fade-up" data-aos-delay="100">
+                <form id="demo-form" method="POST" class="space-y-6" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="demo-name" class="block text-sm font-medium text-cyber-light mb-2">Full Name</label>
+                            <input type="text" name="demo-name" id="demo-name" class="form-input block w-full rounded-md p-3" required>
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <label for="demo-email" class="block text-sm font-medium text-cyber-light mb-2">Work Email</label>
+                            <input type="email" name="demo-email" id="demo-email" class="form-input block w-full rounded-md p-3" required>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company-name" class="block text-sm font-medium text-cyber-light mb-2">Company Name</label>
+                            <input type="text" name="company-name" id="company-name" class="form-input block w-full rounded-md p-3" required>
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <label for="company-size" class="block text-sm font-medium text-cyber-light mb-2">Company Size</label>
+                            <select id="company-size" name="company-size" class="form-input block w-full rounded-md p-3" required>
+                                <option value="">Please select</option>
+                                <option>1-50 Employees</option>
+                                <option>51-200 Employees</option>
+                                <option>201-1000 Employees</option>
+                                <option>1001-5000 Employees</option>
+                                <option>5000+ Employees</option>
+                            </select>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="demo-message" class="block text-sm font-medium text-cyber-light mb-2">Questions or Comments (Optional)</label>
+                        <textarea id="demo-message" name="demo-message" rows="4" class="form-input block w-full rounded-md p-3"></textarea>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="submit" class="btn-primary text-lg">Request Demo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section py-12 px-6 border-t border-cyber-cyan border-opacity-10 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <svg class="w-8 h-8 text-cyber-cyan" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-3 text-xl font-bold text-cyber-light">Zk-<span class="text-cyber-cyan">ShieldNet</span></span>
+                    </a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors" aria-label="Twitter">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-cyber-light font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">About</a></li>
+                        <li><a href="careers.html" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-cyber-light font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Documentation</a></li>
+                        <li><a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Whitepaper</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-cyber-light font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Privacy</a></li>
+                        <li><a href="#" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-cyber-light font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="support.html" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Support</a></li>
+                        <li><a href="contact.html" class="text-cyber-gray hover:text-cyber-cyan transition-colors text-sm">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-cyber-cyan border-opacity-10 pt-8 mt-8 text-center">
+                <p class="text-cyber-gray text-sm">© 2025 Zk-ShieldNet, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Animation on Scroll
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize the 3D background
+            initNetworkBackground();
+
+            // Form validation logic
+            const form = document.getElementById('demo-form');
+            const nameInput = document.getElementById('demo-name');
+            const emailInput = document.getElementById('demo-email');
+            const companyNameInput = document.getElementById('company-name');
+            const companySizeInput = document.getElementById('company-size');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Stop form submission
+                const isFormValid = validateForm();
+
+                if (isFormValid) {
+                    const formContainer = document.getElementById('form-container');
+                    formContainer.innerHTML = `
+                        <div class="text-center bg-cyber-dark bg-opacity-50 border border-cyber-cyan rounded-lg p-8">
+                            <h2 class="text-2xl font-bold text-cyber-cyan mb-4">Demo Request Sent!</h2>
+                            <p class="text-cyber-light">Thank you for your interest. A member of our team will reach out to you shortly to schedule your private demo.</p>
+                        </div>
+                    `;
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                clearErrors();
+
+                // Validate Name
+                if (nameInput.value.trim() === '') {
+                    showError(nameInput, 'Full Name is required.');
+                    isValid = false;
+                }
+
+                // Validate Email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    showError(emailInput, 'Please enter a valid work email address.');
+                    isValid = false;
+                }
+
+                // Validate Company Name
+                if (companyNameInput.value.trim() === '') {
+                    showError(companyNameInput, 'Company Name is required.');
+                    isValid = false;
+                }
+                
+                // Validate Company Size
+                if (companySizeInput.value === '') {
+                    showError(companySizeInput, 'Please select your company size.');
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            function showError(inputElement, message) {
+                inputElement.classList.add('invalid');
+                const errorContainer = inputElement.nextElementSibling;
+                errorContainer.textContent = message;
+            }
+
+            function clearErrors() {
+                const invalidInputs = form.querySelectorAll('.invalid');
+                invalidInputs.forEach(input => input.classList.remove('invalid'));
+
+                const errorMessages = form.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.textContent = '');
+            }
+        });
+
+        // 3D background animation function
+        function initNetworkBackground() {
+            const canvas = document.getElementById('network-bg');
+            if (!canvas) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 1;
+            camera.rotation.x = Math.PI / 2;
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            const starGeo = new THREE.BufferGeometry();
+            const starCount = 6000;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i++) {
+                starPositions[i] = (Math.random() - 0.5) * 600;
+            }
+            starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            let starMaterial = new THREE.PointsMaterial({ color: 0x64ffda, size: 0.7, transparent: true });
+            const stars = new THREE.Points(starGeo, starMaterial);
+            scene.add(stars);
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+            window.addEventListener('resize', onWindowResize);
+            function animate() {
+                stars.position.y += 0.2;
+                if (stars.position.y > 200) stars.position.y = -200;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>

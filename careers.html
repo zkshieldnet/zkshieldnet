@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Zk-ShieldNet</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-dark': '#0a192f',
+                        'cyber-light': '#ccd6f6',
+                        'cyber-gray': '#8892b0',
+                        'cyber-cyan': '#64ffda',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #0a192f;
+            color: #8892b0;
+            font-family: 'Inter', sans-serif;
+        }
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .section {
+            position: relative;
+            z-index: 1;
+        }
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            color: #ccd6f6;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #64ffda;
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+        }
+        .form-input.invalid {
+            border-color: #f87171;
+        }
+        .error-message {
+            color: #f87171;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            height: 1rem;
+        }
+        .btn-primary {
+            background-color: #64ffda;
+            color: #0a192f;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: rgba(100, 255, 218, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+        }
+        .job-card {
+             background-color: rgba(255, 255, 255, 0.03);
+             border: 1px solid rgba(100, 255, 218, 0.1);
+             transition: all 0.3s ease;
+        }
+        .job-card:hover {
+            border-color: rgba(100, 255, 218, 0.4);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="network-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-cyber-dark bg-opacity-90 backdrop-blur-md z-50 px-6 py-4 border-b border-cyber-cyan border-opacity-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <svg class="w-8 h-8 text-cyber-cyan" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="ml-3 text-xl font-bold text-cyber-light">Zk-<span class="text-cyber-cyan">ShieldNet</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Home</a>
+                <a href="contact.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Contact</a>
+                <a href="support.html" class="text-cyber-light hover:text-cyber-cyan transition-colors">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-cyber-light">Join Our Mission</h1>
+                <p class="text-lg text-cyber-gray mt-4">We're looking for the brightest minds in cryptography, security, and engineering to build the future of collective defense.</p>
+            </div>
+
+            <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Job Opening 1 -->
+                <div class="job-card rounded-lg p-6 flex flex-col md:flex-row justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyber-cyan">Senior Cryptography Engineer (ZK-SNARKs)</h3>
+                        <p class="text-cyber-gray mt-1">Remote | Full-time</p>
+                    </div>
+                    <a href="#application-form" class="btn-primary mt-4 md:mt-0">Apply Now</a>
+                </div>
+                <!-- Job Opening 2 -->
+                <div class="job-card rounded-lg p-6 flex flex-col md:flex-row justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyber-cyan">Lead Security Researcher</h3>
+                        <p class="text-cyber-gray mt-1">Remote | Full-time</p>
+                    </div>
+                    <a href="#application-form" class="btn-primary mt-4 md:mt-0">Apply Now</a>
+                </div>
+                <!-- Job Opening 3 -->
+                <div class="job-card rounded-lg p-6 flex flex-col md:flex-row justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyber-cyan">Distributed Systems Engineer (Go/Rust)</h3>
+                        <p class="text-cyber-gray mt-1">Remote | Full-time</p>
+                    </div>
+                    <a href="#application-form" class="btn-primary mt-4 md:mt-0">Apply Now</a>
+                </div>
+            </div>
+
+             <div id="application-form" class="mt-16 border-t border-cyber-cyan border-opacity-20 pt-12" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-3xl font-bold text-cyber-light text-center mb-8">General Application</h3>
+                <div id="form-container">
+                    <form id="career-form" method="POST" class="space-y-6" novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="career-name" class="block text-sm font-medium text-cyber-light mb-2">Full Name</label>
+                                <input type="text" name="career-name" id="career-name" class="form-input block w-full rounded-md p-3" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div>
+                                <label for="career-email" class="block text-sm font-medium text-cyber-light mb-2">Email Address</label>
+                                <input type="email" name="career-email" id="career-email" class="form-input block w-full rounded-md p-3" required>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="resume" class="block text-sm font-medium text-cyber-light mb-2">Resume/CV</label>
+                            <input type="file" name="resume" id="resume" class="form-input block w-full rounded-md p-2 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-cyber-cyan file:bg-opacity-20 file:text-cyber-cyan hover:file:bg-opacity-30" required>
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <label for="cover-letter" class="block text-sm font-medium text-cyber-light mb-2">Cover Letter (Optional)</label>
+                            <textarea id="cover-letter" name="cover-letter" rows="4" class="form-input block w-full rounded-md p-3"></textarea>
+                        </div>
+                        <div class="text-center pt-4">
+                            <button type="submit" class="btn-primary text-lg">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Animation on Scroll
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize the 3D background
+            initNetworkBackground();
+
+            // Form validation logic
+            const form = document.getElementById('career-form');
+            const nameInput = document.getElementById('career-name');
+            const emailInput = document.getElementById('career-email');
+            const resumeInput = document.getElementById('resume');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const isFormValid = validateForm();
+
+                if (isFormValid) {
+                    const formContainer = document.getElementById('form-container');
+                    formContainer.innerHTML = `
+                        <div class="text-center bg-cyber-dark bg-opacity-50 border border-cyber-cyan rounded-lg p-8">
+                            <h2 class="text-2xl font-bold text-cyber-cyan mb-4">Application Received!</h2>
+                            <p class="text-cyber-light">Thank you for your interest in Zk-ShieldNet. We have received your application and will be in touch if your qualifications match an open role.</p>
+                        </div>
+                    `;
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                clearErrors();
+
+                // Validate Name
+                if (nameInput.value.trim() === '') {
+                    showError(nameInput, 'Full Name is required.');
+                    isValid = false;
+                }
+
+                // Validate Email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    showError(emailInput, 'Please enter a valid email address.');
+                    isValid = false;
+                }
+
+                // Validate Resume File
+                if (resumeInput.files.length === 0) {
+                    showError(resumeInput, 'Please upload your Resume/CV.');
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            function showError(inputElement, message) {
+                inputElement.classList.add('invalid');
+                const errorContainer = inputElement.nextElementSibling;
+                errorContainer.textContent = message;
+            }
+
+            function clearErrors() {
+                const invalidInputs = form.querySelectorAll('.invalid');
+                invalidInputs.forEach(input => input.classList.remove('invalid'));
+                const errorMessages = form.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.textContent = '');
+            }
+        });
+
+        // 3D background animation function
+        function initNetworkBackground() {
+            const canvas = document.getElementById('network-bg');
+            if (!canvas) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 1;
+            camera.rotation.x = Math.PI / 2;
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            const starGeo = new THREE.BufferGeometry();
+            const starCount = 6000;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i++) {
+                starPositions[i] = (Math.random() - 0.5) * 600;
+            }
+            starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            let starMaterial = new THREE.PointsMaterial({ color: 0x64ffda, size: 0.7, transparent: true });
+            const stars = new THREE.Points(starGeo, starMaterial);
+            scene.add(stars);
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+            window.addEventListener('resize', onWindowResize);
+            function animate() {
+                stars.position.y += 0.2;
+                if (stars.position.y > 200) stars.position.y = -200;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>
